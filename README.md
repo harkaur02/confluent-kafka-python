@@ -19,7 +19,7 @@ Step 1: Install Kafka with KRaft Mode
           metadata.log.dir=/tmp/kafka-metadata-logs
           # Kafka controller's settings
           controller.quorum.voters=1@localhost:9093
-    
+    [NOTE: I have coied my working tested version of server.properties file in this Repo under config/server.properties]
   1.3  Start the Kafka broker in KRaft mode:
           bin/kafka-server-start.sh config/server.properties 
   

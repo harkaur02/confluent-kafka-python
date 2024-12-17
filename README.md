@@ -14,8 +14,9 @@ Step 1: Install Kafka with KRaft Mode
       cd kafka_2.13-3.9.0
   1.2 Start Kafka in KRaft Mode
   
-      In KRaft mode, Kafka runs without Zookeeper. To enable KRaft mode, modify the server.properties file to configure KRaft.
-      [NOTE: I have coied my working tested version of server.properties file in this Repo under config/server.properties]
+  In KRaft mode, Kafka runs without Zookeeper. To enable KRaft mode, modify the server.properties file to configure KRaft.
+    
+  [NOTE: I have coied my working tested version of server.properties file in this Repo under config/server.properties OR you can try editing as following 1. step] 
         1. Open the config/server.properties file and set the following properties:
         
           process.roles=broker,controller
@@ -34,6 +35,7 @@ Step 1: Install Kafka with KRaft Mode
           bin/kafka-topics.sh --create --topic iot-data --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
 
 Step 2: Set Up Python Project:
+
   2.1 Create a New Python Virtual Environment to isolate the project dependencies.
   
           # Create a virtual environment
@@ -41,27 +43,36 @@ Step 2: Set Up Python Project:
           # Activate the virtual environment
           source iot-kafka-env/bin/activate
   2.2 Install the Required Python Libraries
+  
       We will need the confluent-kafka library to interact with Kafka.
       
           pip install confluent-kafka requests
 
 Step 3: Write the IoT Data Producer
+
   The producer will simulate IoT devices sending temperature and humidity data to the Kafka topic.
+  
   3.1 Create the Producer Script (iot_producer.py) from this repository.
+  
   3.2 Explanation:
-      confluent_kafka.Producer: This class allows you to produce messages to Kafka.
-      generate_iot_data(): This function generates random IoT data (temperature, humidity, device ID, timestamp).
-      producer.produce(): Sends the generated data to the iot-data topic.
-      delivery_report(): Callback function to confirm that the data was delivered to Kafka.
+  
+   confluent_kafka.Producer: This class allows you to produce messages to Kafka.
+   generate_iot_data(): This function generates random IoT data (temperature, humidity, device ID, timestamp).
+   producer.produce(): Sends the generated data to the iot-data topic.
+   delivery_report(): Callback function to confirm that the data was delivered to Kafka.
 
 Step 4: Write the IoT Data Consumer
+
   The consumer will listen to the iot-data topic and process the data received from the producer.
+  
   4.1 Create the Consumer Script (iot_consumer.py) from this repository.
+  
   4.2 Explanation:
-      confluent_kafka.Consumer: Connects to Kafka and consumes messages from a topic.
-      consumer.subscribe(): Subscribes to the iot-data topic.
-      consumer.poll(): Polls for new messages from Kafka.
-      The messages are deserialized and printed out.
+  
+  confluent_kafka.Consumer: Connects to Kafka and consumes messages from a topic.
+  consumer.subscribe(): Subscribes to the iot-data topic.
+  consumer.poll(): Polls for new messages from Kafka.
+  The messages are deserialized and printed out.
 
 Step 5: Run the Producer and Consumer
   5.1 Start the Kafka Producer

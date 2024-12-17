@@ -4,13 +4,16 @@ a Python project for IoT streaming using Kafka in KRaft mode (Kafka Raft mode) a
 Step-by-Step Guide:
 
 Step 1: Install Kafka with KRaft Mode
+
   (Ensure you are using a Kafka version that supports KRaft mode. This feature was introduced in Kafka 2.8.0, but is fully stabilized in later versions like 3.x.x.)
+  
   1.1 Download Kafka
   
       wget https://downloads.apache.org/kafka/3.9.0/kafka_2.13-3.9.0.tgz
       tar -xzf kafka_2.13-3.9.0.tgz
       cd kafka_2.13-3.9.0
   1.2 Start Kafka in KRaft Mode
+  
       In KRaft mode, Kafka runs without Zookeeper. To enable KRaft mode, modify the server.properties file to configure KRaft.
       [NOTE: I have coied my working tested version of server.properties file in this Repo under config/server.properties]
         1. Open the config/server.properties file and set the following properties:

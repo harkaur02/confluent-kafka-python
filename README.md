@@ -18,8 +18,9 @@ Step 1: Install Kafka with KRaft Mode
     
   [NOTE: I have coied my working tested version of server.properties file in this Repo under config/server.properties OR you can try editing as following step 1.]
   
-      1. Open the config/server.properties file and set the following properties:
-        
+    1. Open the config/server.properties file and set the following properties:
+
+
           process.roles=broker,controller
           node.id=1
           listeners=PLAINTEXT://localhost:9092

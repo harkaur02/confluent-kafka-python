@@ -44,7 +44,7 @@ Step 2: Set Up Python Project:
           source iot-kafka-env/bin/activate
   2.2 Install the Required Python Libraries
   
-      We will need the confluent-kafka library to interact with Kafka.
+  We will need the confluent-kafka library to interact with Kafka.
       
           pip install confluent-kafka requests
 

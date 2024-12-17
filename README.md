@@ -2,6 +2,7 @@
 a Python project for IoT streaming using Kafka in KRaft mode (Kafka Raft mode) and the confluent-kafka-python library
 
 Step-by-Step Guide:
+
 Step 1: Install Kafka with KRaft Mode
   (Ensure you are using a Kafka version that supports KRaft mode. This feature was introduced in Kafka 2.8.0, but is fully stabilized in later versions like 3.x.x.)
   1.1 Download Kafka

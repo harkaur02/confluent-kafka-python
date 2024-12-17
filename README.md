@@ -16,7 +16,8 @@ Step 1: Install Kafka with KRaft Mode
   
   In KRaft mode, Kafka runs without Zookeeper. To enable KRaft mode, modify the server.properties file to configure KRaft.
     
-  [NOTE: I have coied my working tested version of server.properties file in this Repo under config/server.properties OR you can try editing as following 1. step] 
+  [NOTE: I have coied my working tested version of server.properties file in this Repo under config/server.properties OR you can try editing as following step 1.]
+  
         1. Open the config/server.properties file and set the following properties:
         
           process.roles=broker,controller

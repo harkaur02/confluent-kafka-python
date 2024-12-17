@@ -57,8 +57,11 @@ Step 3: Write the IoT Data Producer
   3.2 Explanation:
   
    confluent_kafka.Producer: This class allows you to produce messages to Kafka.
+   
    generate_iot_data(): This function generates random IoT data (temperature, humidity, device ID, timestamp).
+   
    producer.produce(): Sends the generated data to the iot-data topic.
+   
    delivery_report(): Callback function to confirm that the data was delivered to Kafka.
 
 Step 4: Write the IoT Data Consumer
@@ -70,8 +73,11 @@ Step 4: Write the IoT Data Consumer
   4.2 Explanation:
   
   confluent_kafka.Consumer: Connects to Kafka and consumes messages from a topic.
+  
   consumer.subscribe(): Subscribes to the iot-data topic.
+  
   consumer.poll(): Polls for new messages from Kafka.
+  
   The messages are deserialized and printed out.
 
 Step 5: Run the Producer and Consumer

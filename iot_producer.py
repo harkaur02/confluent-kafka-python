@@ -12,6 +12,7 @@ conf = {
     'client.id': 'iot-producer'
 }
 
+
 # Create Kafka Producer instance
 producer = Producer(conf)
 

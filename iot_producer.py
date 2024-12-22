@@ -5,6 +5,7 @@ import json
 import time
 import random
 
+
 # Kafka Producer configuration
 conf = {
     'bootstrap.servers': 'localhost:9092',  # Kafka broker address
